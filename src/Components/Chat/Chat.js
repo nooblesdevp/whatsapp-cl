@@ -40,7 +40,10 @@ function Chat() {
     }
   }, [roomId]);
 
-  useEffect(() => {}, []);
+  // for random avatar
+  useEffect(() => {
+    setSeed(Math.floor(Math.random() * 5000));
+  }, []);
 
   //function sendMessage input
   const sendMessage = (e) => {
@@ -58,14 +61,16 @@ function Chat() {
   return (
     <div className="chat">
       <div className="chat__header">
-        <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
+        <IconButton>
+          <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
+        </IconButton>
         <div className="chat__headerInfo">
           <h3>{roomName}</h3>
           <p>
-            Last Seen at ...
+            Last Seen{" "}
             {new Date(
               messages[messages.length - 1]?.timestamp?.toDate()
-            ).toUTCString()}
+            ).toString()}
           </p>
         </div>
         <div className="chat__headerRight">
@@ -83,17 +88,19 @@ function Chat() {
 
       <div className="chat__body">
         {messages.map((message) => (
-          <p
-            className={`chat__message ${
-              message.name === user.displayName && "chat__reciver"
-            }`}
-          >
-            <span className="chat__name">{message.name}</span>
-            {message.message}
-            <span className="chat__timestamp">
-              {new Date(message.timestamp?.toDate()).toUTCString()}
-            </span>
-          </p>
+          <div className="chat__messages">
+            <p
+              className={`chat__message ${
+                message.name === user.displayName && "chat__reciver"
+              }`}
+            >
+              <span className="chat__name">{message.name}</span>
+              {message.message}
+              <span className="chat__timestamp">
+                {new Date(message.timestamp?.toDate()).toString()}
+              </span>
+            </p>
+          </div>
         ))}
       </div>
       <div className="chat__footer">

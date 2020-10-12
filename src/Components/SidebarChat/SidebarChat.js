@@ -22,10 +22,12 @@ function SidebarChat({ id, name, addNewChat }) {
     }
   }, [id]);
 
+  // for random avatar
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
   }, []);
 
+  //function add room name
   const createChat = () => {
     const roomName = prompt("please enter name for chat room");
 
@@ -37,13 +39,18 @@ function SidebarChat({ id, name, addNewChat }) {
     }
   };
 
+  // sett max character they get
+  function truncate(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + " .." : str;
+  }
+
   return !addNewChat ? (
     <Link to={`/rooms/${id}`}>
       <div className="sidebarChat">
         <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
         <div className="sidebarChat__info">
           <h2>{name}</h2>
-          <p>{messages[0]?.message} </p>
+          <p>{truncate(messages[0]?.message, 40)} </p>
         </div>
       </div>
     </Link>

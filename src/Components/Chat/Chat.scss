@@ -33,6 +33,7 @@
     background-repeat: repeat;
     padding: 30px;
     overflow: scroll;
+    position: relative;
     .chat__message{
         position: relative;
         font-size: 16px;
@@ -57,7 +58,16 @@
     .chat__reciver{
         margin-left: auto;
         background: #dcf8c6;
+        // position: absolute;
+        // bottom: 10;
+
     }
+
+    // .chat__messages{
+    //     position:absolute;
+    //     bottom:0;
+    //     width: fit-content;
+    // }
     
 }
 .chat__footer{

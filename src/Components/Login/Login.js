@@ -1,4 +1,5 @@
-import { Button } from "@material-ui/core";
+import { Button, IconButton } from "@material-ui/core";
+import { Facebook, LinkedIn, Web } from "@material-ui/icons";
 import React from "react";
 import { auth, provider } from "../../firebase/firebase";
 import { actionTypes } from "../reducer/reducer";
@@ -32,6 +33,35 @@ function Login() {
           <h1>Sign in to Whatsapp</h1>
         </div>
         <Button onClick={signIn}>Sign in With Google</Button>
+      </div>
+      <div className="login__socialLink">
+        <IconButton>
+          <a
+            href="https://web.facebook.com/nuzulzen/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Facebook />
+          </a>
+        </IconButton>
+        <IconButton>
+          <a
+            href="https://nuzul-zen-alfian.web.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Web />
+          </a>
+        </IconButton>
+        <IconButton>
+          <a
+            href="https://www.linkedin.com/in/nuzul-zen-alfian-828297184/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedIn />
+          </a>
+        </IconButton>
       </div>
     </div>
   );
