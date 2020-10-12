@@ -1,0 +1,20 @@
+$bgColor: #dadbd3;
+$bgColor1: #ededed;
+
+.app{
+  background: $bgColor;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  .app__body{
+    display: flex;
+    background: $bgColor1;
+    height: 90vh;
+    width: 90vw;
+    margin: auto;
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.3);
+    
+  }
+}
