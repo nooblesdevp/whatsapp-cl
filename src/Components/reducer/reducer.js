@@ -14,6 +14,11 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
+    case actionTypes.SET_USER_NULL:
+      return {
+        ...state,
+        user: null,
+      };
 
     default:
       return state;

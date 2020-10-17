@@ -35,7 +35,7 @@ function Login() {
         <Button onClick={signIn}>Sign in With Google</Button>
       </div>
       <div className="login__socialLink">
-        <IconButton>
+        <IconButton className="login__socialbtn">
           <a
             href="https://web.facebook.com/nuzulzen/"
             target="_blank"
@@ -44,7 +44,7 @@ function Login() {
             <Facebook />
           </a>
         </IconButton>
-        <IconButton>
+        <IconButton className="login__socialbtn">
           <a
             href="https://nuzul-zen-alfian.web.app/"
             target="_blank"
@@ -53,7 +53,7 @@ function Login() {
             <Web />
           </a>
         </IconButton>
-        <IconButton>
+        <IconButton className="login__socialbtn">
           <a
             href="https://www.linkedin.com/in/nuzul-zen-alfian-828297184/"
             target="_blank"
