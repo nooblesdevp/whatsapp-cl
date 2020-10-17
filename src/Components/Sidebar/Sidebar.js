@@ -12,7 +12,7 @@ import SidebarChat from "../SidebarChat/SidebarChat";
 import { useStateValue } from "../StateProvider/StateProvider";
 import "./Sidebar.scss";
 
-import db from "../../firebase/firebase";
+import db, { auth } from "../../firebase/firebase";
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
@@ -35,7 +35,11 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        <Avatar src={user?.photoURL} />
+        <Avatar
+          className="sidebar__avatar"
+          onClick={() => auth.signOut()}
+          src={user?.photoURL}
+        />
         <div className="sidebar__headerRight">
           <IconButton>
             <DonutLargeIcon />

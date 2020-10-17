@@ -30,7 +30,6 @@ function SidebarChat({ id, name, addNewChat }) {
   //function add room name
   const createChat = () => {
     const roomName = prompt("please enter name for chat room");
-
     if (roomName) {
       //do some clever database stuff
       db.collection("rooms").add({
@@ -39,7 +38,7 @@ function SidebarChat({ id, name, addNewChat }) {
     }
   };
 
-  // sett max character they get
+  // sett max character they get from chat
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + " .." : str;
   }

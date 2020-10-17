@@ -1,21 +1,22 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-import firebase from 'firebase'
+import firebase from "firebase";
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyAnXP4yqfFLqdLLRgnrb2z8drDJ_ntj76o",
-    authDomain: "whatsapp-cl-v1.firebaseapp.com",
-    databaseURL: "https://whatsapp-cl-v1.firebaseio.com",
-    projectId: "whatsapp-cl-v1",
-    storageBucket: "whatsapp-cl-v1.appspot.com",
-    messagingSenderId: "830837217217",
-    appId: "1:830837217217:web:84e5a390748f72cdb00140",
-    measurementId: "G-KSLD6H72P0"
-  };
+  apiKey: "AIzaSyB6T5uSPD08x59H_iqkokpR_irsvuw-SWM",
+  authDomain: "whatsapp-clone-fd762.firebaseapp.com",
+  databaseURL: "https://whatsapp-clone-fd762.firebaseio.com",
+  projectId: "whatsapp-clone-fd762",
+  storageBucket: "whatsapp-clone-fd762.appspot.com",
+  messagingSenderId: "224098467179",
+  appId: "1:224098467179:web:1d8b0f653f9fe59983a02e",
+  measurementId: "G-S1NK4V8NJR",
+};
 
-  const firebaseApp = firebase.initializeApp(firebaseConfig)
-  const db = firebaseApp.firestore()
-  const auth = firebase.auth()
-  const provider = new firebase.auth.GoogleAuthProvider()
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
 
-  export { auth, provider }
-  export default db
+export { auth, provider };
+export default db;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import firebase from "firebase";
 //icons
@@ -25,11 +25,11 @@ function Chat() {
 
   useEffect(() => {
     if (roomId) {
-      //get rooms chat information
+      //get rooms chat information for sidebarChat
       db.collection("rooms")
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
-      //get messages user and timestamp
+      //get messages user and timestamp for chat body
       db.collection("rooms")
         .doc(roomId)
         .collection("messages")
@@ -57,6 +57,21 @@ function Chat() {
     });
     setInput("");
   };
+
+  const messagesEndRef = useRef(null);
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    // console.log('called')
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+    //   scrl= document.getElementById("chat__box")
+    //  console.log(messagesEndRef.current.clientHeight);
+    //  scrl.scrollIntoView(false);
+  }, [messages]);
 
   return (
     <div className="chat">
